@@ -26,7 +26,7 @@ resource "aws_network_acl_rule" "allow_outbound_all" {
   protocol       = "all"
   rule_action    = "allow"
   cidr_block     = "0.0.0.0/0"
-  from_port      = 0 
+  from_port      = 0
   to_port        = 6535
 
 }
@@ -58,10 +58,10 @@ resource "aws_network_acl_rule" "allow_inbound_nfs" {
 
 resource "aws_network_acl_association" "publicnacl" {
   network_acl_id = aws_network_acl.atlasnacl.id
-  subnet_id = aws_subnet.publicsubnet1.id
+  subnet_id      = aws_subnet.publicsubnet1.id
 }
 
 resource "aws_network_acl_association" "privatenacl" {
   network_acl_id = aws_network_acl.atlasnacl.id
-  subnet_id = aws_subnet.privatesubnet1.id
+  subnet_id      = aws_subnet.privatesubnet1.id
 }
