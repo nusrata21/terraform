@@ -12,7 +12,7 @@
 #   user_data              = data.template_file.webserver_script.rendered
 
 #   root_block_device {
-#     volume_size = "9"
+#     volume_size = 9
 #   }
 
 #   depends_on = [aws_security_group.allow_req_traffic]
