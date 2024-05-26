@@ -27,6 +27,6 @@ resource "aws_autoscaling_group" "ASGtest1" {
   health_check_type   = "ELB"
   vpc_zone_identifier = [var.defsub1, var.defsub2]
   target_group_arns   = [var.tg1]
-  depends_on          = [aws_launch_template.lt1test]
+  depends_on          = [aws_launch_template.lt1test, aws_lb_target_group.tg1]
 
 }
